@@ -1,18 +1,17 @@
 package com.financa.api.receitas;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/receita")
+@RequestMapping("/receitas")
 public class ReceitasControler {
-    @GetMapping
-    public String consultarReceita() {
-        return "Nenhuma receita incerida!";
-    }
-    @PostMapping
-    public void cadastrarReceita(@RequestBody Receitas dados) {
-        System.out.println( dados.getValor());
-        System.out.println( dados.getDataDeInsercao());
 
+    @Autowired
+    private ReceitaRepository repository;
+
+    @PostMapping
+    public void cadastrarReceita(@RequestBody ReceitasDTO receitasDTO) {
+        repository.save(new Receita(receitasDTO));
     }
 }

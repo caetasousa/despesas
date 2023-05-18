@@ -6,3 +6,9 @@ CREATE TABLE despesas (
     vencimento VARCHAR(255) NOT NULL,
     data_de_insercao VARCHAR(255) NOT NULL
 );
+
+CREATE TABLE receitas (
+    id SERIAL PRIMARY KEY,
+    valor NUMERIC(10, 2) NOT NULL,
+    data_de_insercao VARCHAR(255) NOT NULL
+);

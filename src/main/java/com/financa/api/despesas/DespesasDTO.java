@@ -3,15 +3,12 @@ package com.financa.api.despesas;
 import com.financa.api.enums.Caetegoria;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
 public class DespesasDTO {
     private BigDecimal valor;
     private String descricao;
     private Caetegoria categoria;
-    private LocalDate vencimento;
-    private LocalDate dataDeInsercao = LocalDate.now();
+    private String vencimento;
 
     public BigDecimal getValor() {
         return valor;
@@ -25,11 +22,7 @@ public class DespesasDTO {
         return categoria;
     }
 
-    public LocalDate getVencimento() {
+    public String getVencimento() {
         return vencimento;
-    }
-
-    public LocalDate getDataDeInsercao() {
-        return dataDeInsercao;
     }
 }
