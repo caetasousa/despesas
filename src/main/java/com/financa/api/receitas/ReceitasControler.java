@@ -1,5 +1,6 @@
 package com.financa.api.receitas;
 
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,7 +12,8 @@ public class ReceitasControler {
     private ReceitaRepository repository;
 
     @PostMapping
-    public void cadastrarReceita(@RequestBody ReceitasDTO receitasDTO) {
+    public void cadastrarReceita(@RequestBody @Valid ReceitasDTO receitasDTO) {
+
         repository.save(new Receita(receitasDTO));
     }
 }
