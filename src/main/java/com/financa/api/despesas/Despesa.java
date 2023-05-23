@@ -1,6 +1,6 @@
 package com.financa.api.despesas;
 
-import com.financa.api.enums.Caetegoria;
+import com.financa.api.Categorias.Categoria;
 import jakarta.persistence.*;
 
 
@@ -18,7 +18,7 @@ public class Despesa {
     private String descricao;
 
     @Enumerated(EnumType.STRING)
-    private Caetegoria categoria;
+    private Categoria categoria;
 
     private LocalDate vencimento;
     private Instant dataDeInsercao;

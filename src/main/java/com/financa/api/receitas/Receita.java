@@ -19,4 +19,8 @@ public class Receita {
         this.valor = receitasDTO.getValor();
         this.dataDeInsercao = Instant.now();
     }
+
+    public BigDecimal getValor() {
+        return valor;
+    }
 }

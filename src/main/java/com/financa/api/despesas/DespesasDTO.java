@@ -1,13 +1,11 @@
 package com.financa.api.despesas;
 
-import com.financa.api.enums.Caetegoria;
-import jakarta.validation.constraints.Future;
+import com.financa.api.Categorias.Categoria;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
 
 public class DespesasDTO {
     @NotNull
@@ -15,7 +13,7 @@ public class DespesasDTO {
     @NotBlank
     private String descricao;
     @NotNull
-    private Caetegoria categoria;
+    private Categoria categoria;
     @NotNull
     @Pattern(regexp = "\\d{4}-\\d{2}-\\d{2}", message = "O formato da data deve ser yyyy-MM-dd")
     private String vencimento;
@@ -28,7 +26,7 @@ public class DespesasDTO {
         return descricao;
     }
 
-    public Caetegoria getCategoria() {
+    public Categoria getCategoria() {
         return categoria;
     }
 
