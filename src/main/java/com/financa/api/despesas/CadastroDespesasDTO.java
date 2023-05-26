@@ -7,7 +7,7 @@ import jakarta.validation.constraints.Pattern;
 
 import java.math.BigDecimal;
 
-public class DespesasDTO {
+public class CadastroDespesasDTO {
     @NotNull
     private BigDecimal valor;
     @NotBlank

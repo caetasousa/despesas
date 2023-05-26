@@ -3,10 +3,9 @@ package com.financa.api.despesas;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/despesas")
@@ -17,7 +16,12 @@ public class DespesasControler {
 
     @PostMapping
     @Transactional
-    public void AdicionarDespesa(@RequestBody @Valid DespesasDTO despesasDTO) {
+    public void AdicionarDespesa(@RequestBody @Valid CadastroDespesasDTO despesasDTO) {
         repository.save(new Despesa( despesasDTO));
+    }
+
+    @GetMapping
+    public List<ListagemDespesasDTO> listarDespesa() {
+        return repository.findAll().stream().map(ListagemDespesasDTO::new).toList();
     }
 }

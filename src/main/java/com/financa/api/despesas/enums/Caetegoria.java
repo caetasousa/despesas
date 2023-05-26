@@ -1,4 +1,4 @@
-package com.financa.api.enums;
+package com.financa.api.despesas.enums;
 
 public enum Caetegoria {
     ALIMENTACAO,

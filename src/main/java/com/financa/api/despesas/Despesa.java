@@ -1,6 +1,6 @@
 package com.financa.api.despesas;
 
-import com.financa.api.enums.Caetegoria;
+import com.financa.api.despesas.enums.Caetegoria;
 import jakarta.persistence.*;
 
 
@@ -20,15 +20,42 @@ public class Despesa {
     @Enumerated(EnumType.STRING)
     private Caetegoria categoria;
 
-    private LocalDate vencimento;
-    private Instant dataDeInsercao;
+    private String vencimento;
+    private String dataDeInsercao;
 
-    public Despesa(DespesasDTO despesasDTO) {
+    public Despesa() {
+    }
+
+    public Despesa(CadastroDespesasDTO despesasDTO) {
         this.Id = null;
         this.valor = despesasDTO.getValor();
         this.descricao = despesasDTO.getDescricao();
         this.categoria = despesasDTO.getCategoria();
-        this.vencimento = LocalDate.parse(despesasDTO.getVencimento());
-        this.dataDeInsercao = Instant.now();
+        this.vencimento = despesasDTO.getVencimento();
+        this.dataDeInsercao = String.valueOf(Instant.now());
+    }
+
+    public Long getId() {
+        return Id;
+    }
+
+    public String getDataDeInsercao() {
+        return dataDeInsercao;
+    }
+
+    public BigDecimal getValor() {
+        return valor;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public Caetegoria getCategoria() {
+        return categoria;
+    }
+
+    public String getVencimento() {
+        return vencimento;
     }
 }

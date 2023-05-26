@@ -4,7 +4,7 @@ CREATE TABLE despesas (
     descricao VARCHAR(255) NOT NULL,
     categoria VARCHAR(50) NOT NULL,
     vencimento VARCHAR(255) NOT NULL,
-    data_de_insercao VARCHAR(255) NOT NULL
+    data_de_insercao VARCHAR(255)
 );
 
 CREATE TABLE receitas (

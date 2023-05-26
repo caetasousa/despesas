@@ -12,11 +12,26 @@ public class Receita {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
     private BigDecimal valor;
-    private Instant dataDeInsercao;
+    private String dataDeInsercao;
 
     public Receita(ReceitasDTO receitasDTO) {
         Id = null;
         this.valor = receitasDTO.getValor();
-        this.dataDeInsercao = Instant.now();
+        this.dataDeInsercao = String.valueOf(Instant.now());
+    }
+
+    public Receita() {
+    }
+
+    public Long getId() {
+        return Id;
+    }
+
+    public BigDecimal getValor() {
+        return valor;
+    }
+
+    public String getDataDeInsercao() {
+        return dataDeInsercao;
     }
 }
