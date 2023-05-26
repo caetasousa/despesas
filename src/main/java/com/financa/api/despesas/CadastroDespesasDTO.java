@@ -1,13 +1,11 @@
 package com.financa.api.despesas;
 
-import com.financa.api.enums.Caetegoria;
-import jakarta.validation.constraints.Future;
+import com.financa.api.despesas.enums.Caetegoria;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
 
 public class DespesasDTO {
     @NotNull
