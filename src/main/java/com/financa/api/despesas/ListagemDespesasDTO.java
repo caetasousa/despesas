@@ -1,6 +1,6 @@
 package com.financa.api.despesas;
 
-import com.financa.api.despesas.enums.Caetegoria;
+import com.financa.api.despesas.enums.Categoria;
 
 import java.math.BigDecimal;
 
@@ -8,7 +8,7 @@ import java.math.BigDecimal;
 public class ListagemDespesasDTO {
     private BigDecimal valor;
     private String descricao;
-    private Caetegoria categoria;
+    private Categoria categoria;
     private String vencimento;
 
     public ListagemDespesasDTO() {
@@ -29,7 +29,7 @@ public class ListagemDespesasDTO {
         return descricao;
     }
 
-    public Caetegoria getCategoria() {
+    public Categoria getCategoria() {
         return categoria;
     }
 

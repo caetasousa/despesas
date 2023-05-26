@@ -1,6 +1,5 @@
 package com.financa.api.receitas;
 
-import com.financa.api.despesas.ListagemDespesasDTO;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

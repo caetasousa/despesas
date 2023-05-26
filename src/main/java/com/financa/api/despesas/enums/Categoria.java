@@ -1,6 +1,6 @@
 package com.financa.api.despesas.enums;
 
-public enum Caetegoria {
+public enum Categoria {
     ALIMENTACAO,
     TRANSPORTE,
     MORADIA,

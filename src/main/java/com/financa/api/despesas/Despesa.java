@@ -1,12 +1,12 @@
 package com.financa.api.despesas;
 
-import com.financa.api.despesas.enums.Caetegoria;
+import com.financa.api.despesas.enums.Categoria;
 import jakarta.persistence.*;
 
 
 import java.math.BigDecimal;
 import java.time.Instant;
-import java.time.LocalDate;
+
 
 @Table(name = "despesas")
 @Entity(name = "despesa")
@@ -18,7 +18,7 @@ public class Despesa {
     private String descricao;
 
     @Enumerated(EnumType.STRING)
-    private Caetegoria categoria;
+    private Categoria categoria;
 
     private String vencimento;
     private String dataDeInsercao;
@@ -51,7 +51,7 @@ public class Despesa {
         return descricao;
     }
 
-    public Caetegoria getCategoria() {
+    public Categoria getCategoria() {
         return categoria;
     }
 
