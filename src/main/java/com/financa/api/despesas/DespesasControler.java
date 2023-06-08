@@ -5,6 +5,7 @@ import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -23,7 +24,7 @@ public class DespesasControler {
     }
 
     @GetMapping
-    public Page<ListagemDespesasDTO> listarDespesa(Pageable paginacao) {
+    public Page<ListagemDespesasDTO> listarDespesa(@PageableDefault(size = 10, sort = {"descricao"}) Pageable paginacao) {
         return repository.findAll(paginacao).map(ListagemDespesasDTO::new);
     }
 }
