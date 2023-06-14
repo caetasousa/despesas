@@ -34,4 +34,10 @@ public class Receita {
     public String getDataDeInsercao() {
         return dataDeInsercao;
     }
+
+    public void atualizarReceita(AtualizarReceitasDTO atualizarReceitasDTO) {
+        if (atualizarReceitasDTO.getValor() != null) {
+            this.valor = atualizarReceitasDTO.getValor();
+        }
+    }
 }

@@ -1,5 +1,6 @@
 package com.financa.api.receitas;
 
+import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -24,5 +25,12 @@ public class ReceitasControler {
     @GetMapping
     public Page<ListagemReceitasDTO> listarReceitas(@PageableDefault(size = 10) Pageable paginacao) {
         return repository.findAll(paginacao).map(ListagemReceitasDTO::new);
+    }
+
+    @PutMapping
+    @Transactional
+    public void atualizar(@RequestBody @Valid AtualizarReceitasDTO atualizarReceitasDTO) {
+        var receita = repository.getReferenceById(atualizarReceitasDTO.getId());
+        receita.atualizarReceita(atualizarReceitasDTO);
     }
 }
