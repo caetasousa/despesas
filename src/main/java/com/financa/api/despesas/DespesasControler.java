@@ -8,7 +8,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 
 @RestController
 @RequestMapping("/despesas")
@@ -26,5 +25,12 @@ public class DespesasControler {
     @GetMapping
     public Page<ListagemDespesasDTO> listarDespesa(@PageableDefault(size = 10, sort = {"descricao"}) Pageable paginacao) {
         return repository.findAll(paginacao).map(ListagemDespesasDTO::new);
+    }
+
+    @PutMapping
+    @Transactional
+    public void atualizar(@RequestBody @Valid AtualizacaoDespesasDTO atualizacaoDespesasDTO) {
+        var despesa = repository.getReferenceById(atualizacaoDespesasDTO.getId());
+        despesa.atualizarDespesa(atualizacaoDespesasDTO);
     }
 }

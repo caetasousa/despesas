@@ -58,4 +58,22 @@ public class Despesa {
     public String getVencimento() {
         return vencimento;
     }
+
+    public void atualizarDespesa(AtualizacaoDespesasDTO atualizacaoDespesasDTO) {
+        if (atualizacaoDespesasDTO.getValor() != null) {
+            this.valor = atualizacaoDespesasDTO.getValor();
+        }
+
+        if (atualizacaoDespesasDTO.getDescricao() != null) {
+            this.descricao = atualizacaoDespesasDTO.getDescricao();
+        }
+
+        if (atualizacaoDespesasDTO.getCategoria() != null) {
+            this.categoria = atualizacaoDespesasDTO.getCategoria();
+        }
+
+        if (atualizacaoDespesasDTO.getVencimento() != null) {
+            this.vencimento = atualizacaoDespesasDTO.getVencimento();
+        }
+    }
 }
