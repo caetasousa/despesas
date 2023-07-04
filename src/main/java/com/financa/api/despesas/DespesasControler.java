@@ -33,4 +33,10 @@ public class DespesasControler {
         var despesa = repository.getReferenceById(atualizacaoDespesasDTO.getId());
         despesa.atualizarDespesa(atualizacaoDespesasDTO);
     }
+
+    @DeleteMapping("/{id}")
+    @Transactional
+    public void excluir(@PathVariable Long id){
+        repository.deleteById(id);
+    }
 }

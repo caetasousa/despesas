@@ -33,4 +33,10 @@ public class ReceitasControler {
         var receita = repository.getReferenceById(atualizarReceitasDTO.getId());
         receita.atualizarReceita(atualizarReceitasDTO);
     }
+
+    @DeleteMapping("/{id}")
+    @Transactional
+    public void excluir(@PathVariable Long id){
+        repository.deleteById(id);
+    }
 }
